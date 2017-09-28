@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>TurtleCrawl: A Dungeon Crawler Game</title>
+		<meta name="author" content="LauchCode Seattle Students" />
+		<meta name="description" content="A web-based dugeon craling game, mostly a learing project for four LaunchCode Students" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="theme-color" content="#9a9a9a" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+  	<link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
+	</head>
+	<body>
+		<header>
+			<h1>TurtleCrawl: A Dungeon Crawler Game</h1>
+			<nav>
+				<ul>
+					<a href="."><li>Main</li></a>
+					<a href="game"><li>The Game</li></a>
+					<a href="contact"><li>Credits\Contact Us</li></a>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<h2>{{title}}</h2>
+
+			      {% block content %}
+            {% endblock %}
+
+        </main>
+		<footer>
+      <p>For the Win!</p>
+		</footer>
+	</body>
+</html>
