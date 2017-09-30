@@ -9,8 +9,8 @@ def get_Users():
 
 @app.before_request
 def require_login():
-    allowed_routes = ['login', 'signup', 'index']
-    if request.endpoint not in allowed_routes and 'username' not in session:
+    allowed_routes = ['login', 'signup', 'index', 'contact']
+    if request.endpoint not in allowed_routes and 'user' not in session:
         return redirect('/login')
 
 @app.route('/')
@@ -59,7 +59,7 @@ def login():
         if user and check_pw_hash(password, user.pw_hash):
             session['username'] = username
             flash("Logged In!")
-            return redirect("/blog")
+            return redirect("/game")
         else:
             flash("Username doesnt not exist, or password is incorrect.", "error")
             return redirect("/login")
