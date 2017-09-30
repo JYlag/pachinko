@@ -9,3 +9,5 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI', 'mysql+py
 app.config['SQLALCHEMY_ECHO'] = True
 
 db = SQLAlchemy(app)
+
+app.secret_key = 'NJfpoqwenDFSljqnlkjqLK'
