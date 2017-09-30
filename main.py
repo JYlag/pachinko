@@ -7,6 +7,12 @@ from hashutils import check_pw_hash
 def get_Users():
     return User.query.filter_by().all()
 
+def input_is_valid(text):
+    return len(text) >= 3 and len(text) <= 20
+
+def verify_passwords(password,verify_pass):
+    return password == verify_pass
+
 @app.before_request
 def require_login():
     allowed_routes = ['login', 'signup', 'index', 'contact']
@@ -31,21 +37,23 @@ def signup():
         username = request.form['username']
         password = request.form['password']
         verify = request.form['verify']
-        username_db_count = User.query.filter_by(username=username).count()
-        if len(password) < 3 or len(username) < 3:
-            flash("Username and password must be more than 3 characters long")
-            return redirect('/signup')
-        if username_db_count > 0:
-            flash('yikes! "' + username + '" is already taken and password reminders are not implemented')
-            return redirect('/signup')
-        if password != verify:
-            flash('passwords did not match')
-            return redirect('/signup')
-        user = User(username=username, password=password)
-        db.session.add(user)
-        db.session.commit()
-        session['user'] = user.username
-        return redirect("/index")
+        existing_user = User.query.filter_by(username=username).first()
+        if not existing_user:
+
+            if not input_is_valid(username):
+                flash("Username does not meet requirements. Please enter a different user", "error")
+            if not input_is_valid(password):
+                flash("Password does not meet requirements. Please try again.", "error")
+            if not verify_passwords(password, verify):
+                flash("Passwords do not match. Please try again.", "error")
+
+            if input_is_valid(username) and input_is_valid(password) and verify_passwords(password,verify):
+                new_user = User(username, password)
+                db.session.add(new_user)
+                db.session.commit()
+                session['user'] = username
+
+        return redirect('/')
     else:
         return render_template('signup.html')
 
