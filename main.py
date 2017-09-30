@@ -57,7 +57,7 @@ def login():
         password = request.form['password']
         user = User.query.filter_by(username=username).first()
         if user and check_pw_hash(password, user.pw_hash):
-            session['username'] = username
+            session['user'] = user.username
             flash("Logged In!")
             return redirect("/game")
         else:
@@ -68,7 +68,7 @@ def login():
 
 @app.route("/logout")
 def logout():
-    del session['username']
+    del session['user']
     return redirect("/blog")
 
 

@@ -11,7 +11,21 @@
   	<link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
 	</head>
 	<body>
+
+        {%  if 'user' in session %}
 		<header>
+			<h1>TurtleCrawl: A Dungeon Crawler Game</h1>
+			<nav>
+				<ul>
+					<a href="."><li>Main</li></a>
+					<a href="game"><li>The Game</li></a>
+					<a href="contact"><li>Credits\Contact Us</li></a>
+                    <a href="logout"><li>Logout</li></a>
+				</ul>
+			</nav>
+		</header>
+        {% else %}
+        <header>
 			<h1>TurtleCrawl: A Dungeon Crawler Game</h1>
 			<nav>
 				<ul>
@@ -23,6 +37,8 @@
 				</ul>
 			</nav>
 		</header>
+        {% endif %}
+
 		<main>
 			<h2>{{title}}</h2>
 
