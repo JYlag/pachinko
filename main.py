@@ -7,6 +7,12 @@ from hashutils import check_pw_hash
 def get_Users():
     return User.query.filter_by().all()
 
+@app.before_request
+def require_login():
+    allowed_routes = ['login', 'signup', 'index']
+    if request.endpoint not in allowed_routes and 'username' not in session:
+        return redirect('/login')
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -39,9 +45,31 @@ def signup():
         db.session.add(user)
         db.session.commit()
         session['user'] = user.username
-        return redirect("/newblog")
+        return redirect("/index")
     else:
         return render_template('signup.html')
+
+@app.route("/login", methods=['POST', 'GET'])
+def login():
+
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        user = User.query.filter_by(username=username).first()
+        if user and check_pw_hash(password, user.pw_hash):
+            session['username'] = username
+            flash("Logged In!")
+            return redirect("/blog")
+        else:
+            flash("Username doesnt not exist, or password is incorrect.", "error")
+            return redirect("/login")
+
+    return render_template("login.html")
+
+@app.route("/logout")
+def logout():
+    del session['username']
+    return redirect("/blog")
 
 
 if __name__ == '__main__':
