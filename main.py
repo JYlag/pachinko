@@ -52,6 +52,9 @@ def signup():
                 db.session.add(new_user)
                 db.session.commit()
                 session['user'] = username
+                return redirect('/game')
+
+            return redirect('/signup')
         else:
             flash("Username already exists! Enter a different username", "error")
             return redirect('/signup')
