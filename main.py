@@ -1,7 +1,7 @@
 from flask import request, redirect, render_template, session, flash
 import cgi
 from app import app, db
-from models import User
+from models import User, Score
 from hashutils import check_pw_hash
 
 def get_Users():
