@@ -42,8 +42,8 @@
       <file leaf-file-name="game.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="88" column="44" lean-forward="false" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
+            <state relative-caret-position="385">
+              <caret line="90" column="62" lean-forward="false" selection-start-line="90" selection-start-column="62" selection-end-line="90" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -113,6 +113,22 @@
             <path>
               <item name="adventure-game" type="b2602c69:ProjectViewProjectNode" />
               <item name="adventure-game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adventure-game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adventure-game" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adventure-game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adventure-game" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="adventure-game" type="b2602c69:ProjectViewProjectNode" />
+              <item name="adventure-game" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="adventure-game" type="b2602c69:ProjectViewProjectNode" />
@@ -335,7 +351,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1506809197091</updated>
-      <workItem from="1508378613530" duration="205000" />
+      <workItem from="1508378613530" duration="1093000" />
     </task>
     <task id="LOCAL-00001" summary="created create account page and functionality -Sigala">
       <created>1506811248693</created>
@@ -379,11 +395,18 @@
       <option name="project" value="LOCAL" />
       <updated>1507171459788</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Working Pachinko game in beta. Working on implementing Ninja Physics in Phaser">
+      <created>1508378876754</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1508378876754</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205000" />
+    <option name="totallyTimeSpent" value="1093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -432,7 +455,8 @@
     <MESSAGE value="fixed bug where error messages would not pop up in create account -Sigala" />
     <MESSAGE value="added scores to the database, is connected to user, no functionality yet as there is no game -Sigala" />
     <MESSAGE value="fixed username not popping up correctly next to logout button -Sigala" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed username not popping up correctly next to logout button -Sigala" />
+    <MESSAGE value="Working Pachinko game in beta. Working on implementing Ninja Physics in Phaser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working Pachinko game in beta. Working on implementing Ninja Physics in Phaser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -490,6 +514,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -535,6 +560,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -570,6 +596,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -612,6 +639,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
           <caret line="39" column="36" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -650,6 +678,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -702,6 +731,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="35" lean-forward="false" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -775,6 +805,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -805,8 +836,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="88" column="44" lean-forward="false" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
+        <state relative-caret-position="385">
+          <caret line="90" column="62" lean-forward="false" selection-start-line="90" selection-start-column="62" selection-end-line="90" selection-end-column="62" />
           <folding />
         </state>
       </provider>
