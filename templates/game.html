@@ -82,6 +82,8 @@
 		
 		}*/
 
+
+
         var game = new Phaser.Game(800, 640, Phaser.CANVAS, '', { preload: preload, create: create, update: update, render: render});
 
         function preload() {
@@ -102,6 +104,7 @@
         function create() {
 
             game.physics.startSystem(Phaser.Physics.ARCADE);
+            game.physics.arcade.checkCollision.down = false;
             game.stage.backgroundColor = '#eeeeee';
 
 
@@ -122,7 +125,13 @@
             var num = 200
 
             for (var i = 0; i < 5; i++ ) {
-                createLayerPegs(num)
+                if ( i % 2 == 0) {
+                    var worldX = game.rnd.integerInRange(60,120);
+                }
+                else {
+                    var worldX = game.rnd.integerInRange(130,190);
+                }
+                createLayerPegs(worldX,num)
                 num += 50;
             }
 
@@ -132,7 +141,7 @@
             game.physics.enable([ball]);
 
             //ball physics
-            ball.body.bounce.set(0.4);
+            ball.body.bounce.set(.9);
             ball.body.collideWorldBounds = true;
             ball.body.onCollide = new Phaser.Signal();
 
@@ -160,21 +169,26 @@
                 actionOnClick()
             }
 
+            //TODO Write the function to make ballHitBlock() work
+            if ( ball.body.velocity.y != 0) {
+                //game.physics.arcade.collide(ball,block, ballHitBlock(ball, block));
+            }
+
         }
 
         // On click, this will activate gravity for our ball object
         function actionOnClick () {
 
             game.physics.arcade.gravity.y = 200;
+            ball.body.velocity.x=(Math.random() * 200 * game.rnd.integerInRange(-1,1));
 
         }
 
-        function createLayerPegs (worldY) {
-
-            var worldX = game.rnd.integerInRange(80,120);
+        function createLayerPegs (worldX,worldY) {
 
             for ( var i = 0; i < 8; i++)
             {
+
                 if (i == 0) {
                     block = pegs.create(worldX, worldY , 'peg');
                 }
@@ -190,6 +204,29 @@
             }
         }
 
+        //ADDED THIS PART
+        function ballHitBlock(ball, pegs) {
+            var diff = 0;
+
+            if ( ball.x < pegs.x)
+            {
+                //  Ball is on the left-hand side of the paddle
+                diff = pegs.x - ball.x;
+                ball.body.velocity.x = (-10 * diff);
+            }
+            else if (ball.x > pegs.x)
+            {
+                //  Ball is on the right-hand side of the paddle
+                diff = ball.x -pegs.x;
+                ball.body.velocity.x = (10 * diff);
+            }
+            else
+            {
+                //  Ball is perfectly in the middle
+                //  Add a little random X to stop it bouncing straight up!
+                ball.body.velocity.x = 2 + Math.random() * 8;
+            }
+        }
 
 
         function render () {
