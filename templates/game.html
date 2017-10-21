@@ -6,7 +6,7 @@
 	<p><em>Insert Game Here</em></p>
 	<script type="text/javascript">
 
-        var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
+        var game = new Phaser.Game(800, 640, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
 
         function preload() {
             game.load.image('background', '/static/images/LevelOneFinal.png');
@@ -64,8 +64,8 @@
             }
 
             cannon = game.add.sprite(400, 30, 'cannon');
+            //cannon.angle = 90;
             cannon.scale.setTo(0.05, 0.08);
-            cannon.angle = 90;
             cannon.anchor.setTo(0.5, 0.5);
 
             game.physics.enable(cannon, Phaser.Physics.ARCADE);
