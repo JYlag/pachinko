@@ -63,7 +63,7 @@
             }
 
             cannon = game.add.sprite(400, 30, 'cannon');
-            cannon.scale.setTo(0.08);
+            cannon.scale.setTo(0.05, 0.08);
             cannon.angle = 90;
             cannon.anchor.setTo(0.5, 0.5);
 
@@ -73,7 +73,7 @@
             cannon.body.immovable = true;
             cannon.body.moves = false;
 
-            ball = game.add.sprite(400, cannon.y + 35, 'ball');
+            ball = game.add.sprite(400, cannon.y + 27, 'ball');
             ball.scale.setTo(0.1);
             ball.anchor.set(0.5);
             ball.checkWorldBounds = true;
@@ -124,7 +124,8 @@
 
         function ballLost () {
             ballInCannon = true;
-            ball.reset(cannon.x - 13, cannon.y + 35);
+            ball.reset(cannon.body.x - 13, cannon.y + 27);
+            game.physics.arcade.gravity.y = 0;
         }
 
         function ballHitPeg (_ball, _peg) {
