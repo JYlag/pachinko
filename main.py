@@ -61,6 +61,30 @@ def signup():
     else:
         return render_template('signup.html')
 
+
+@app.route("/contact", methods=['POST'])
+def sendMessage():
+
+    if request.method == 'POST':
+        name = request.form['name']
+        message = request.form['message']
+
+        if len(name) <= 1 and len(message) == 0:
+            flash("You didn't include a message! Please include a message", "error")
+            flash("Your name is longer than 1 character. Enter valid name.", "error")
+            return redirect("/contact")
+
+        if len(name) <= 1:
+            flash("Your name is longer than 1 character. Enter valid name.", "error")
+            return redirect("/contact")
+
+        if len(message) == 0:
+            flash("You didn't include a message! Please include a message", "error")
+            return redirect("/contact")
+
+        flash("Message has been sent! Thank you for your time.")
+        return redirect("/contact")
+
 @app.route("/login", methods=['POST', 'GET'])
 def login():
 
