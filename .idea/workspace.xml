@@ -340,7 +340,7 @@
       <option name="presentableId" value="Default" />
       <updated>1506809197091</updated>
       <workItem from="1508378613530" duration="1093000" />
-      <workItem from="1508625696358" duration="1323000" />
+      <workItem from="1508625696358" duration="1332000" />
     </task>
     <task id="LOCAL-00001" summary="created create account page and functionality -Sigala">
       <created>1506811248693</created>
@@ -426,11 +426,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508628753047</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added transparent cannon, colored blocks, and bucket sprite">
+      <created>1508628770103</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1508628770103</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2416000" />
+    <option name="totallyTimeSpent" value="2425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
