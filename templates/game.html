@@ -13,7 +13,8 @@
             game.load.spritesheet('ball', '/static/images/redBall.png');
             game.load.spritesheet('peg_red', '/static/images/redBlock.png');
             game.load.spritesheet('peg_green', '/static/images/greenBlock.png');
-            game.load.spritesheet('cannon', '/static/images/cannon.png')
+            game.load.spritesheet('cannon', '/static/images/cannon.png');
+            game.load.spritesheet('bucket', '/static/images/bucket.png');
         }
 
 
@@ -22,6 +23,7 @@
         var pegsGreen;
         var pegsRed;
         var cannon;
+        var bucket;
 
         var ballInCannon = true;
 
@@ -100,6 +102,49 @@
             ball.anchor.set(0.5);
             ball.checkWorldBounds = true;
 
+            bucket1 = game.add.sprite(10, 515, 'bucket');
+
+            game.physics.enable(bucket1, Phaser.Physics.ARCADE);
+            bucket1.body.immovable = true;
+            bucket1.body.moves = false;
+            bucket1.body.setSize(200, 10, 0, 100);
+
+            bucket2 = game.add.sprite(195, 550, 'bucket');
+
+            game.physics.enable(bucket2, Phaser.Physics.ARCADE);
+
+            bucket2.scale.setTo(0.7);
+            bucket2.body.immovable = true;
+            bucket2.body.moves = false;
+            bucket2.body.setSize(140, 10, 0, 70);
+            
+
+            bucket3 = game.add.sprite(365, 575, 'bucket');
+
+            game.physics.enable(bucket3, Phaser.Physics.ARCADE);
+
+            bucket3.scale.setTo(0.5);
+            bucket3.body.immovable = true;
+            bucket3.body.moves = false;
+            bucket3.body.setSize(100, 10, 0, 50);
+
+            bucket4 = game.add.sprite(505, 550, 'bucket');
+
+            game.physics.enable(bucket4, Phaser.Physics.ARCADE);
+
+            bucket4.scale.setTo(0.7);
+            bucket4.body.immovable = true;
+            bucket4.body.moves = false;
+            bucket4.body.setSize(140, 10, 0, 70);
+
+            bucket5 = game.add.sprite(650, 515, 'bucket');
+
+            game.physics.enable(bucket5, Phaser.Physics.ARCADE);
+
+            bucket5.body.immovable = true;
+            bucket5.body.moves = false;
+            bucket5.body.setSize(200, 10, 0, 100);
+
             game.physics.enable(ball, Phaser.Physics.ARCADE);
 
             ball.body.collideWorldBounds = true;
@@ -107,7 +152,7 @@
 
             ball.events.onOutOfBounds.add(ballLost, this);
 
-            scoreText = game.add.text(32, 550, 'score: 0', { font: "20px Arial", fill: "#000", align: "left" });
+            scoreText = game.add.text(32, 550, 'score: ' + score, { font: "20px Arial", fill: "#000", align: "left" });
             introText = game.add.text(game.world.centerX, 400, '- click to start -', { font: "40px Arial", fill: "#000", align: "center" });
             introText.anchor.setTo(0.5, 0.5);
 
@@ -132,6 +177,11 @@
             else {
                 game.physics.arcade.collide(ball, pegsGreen, ballHitPegGreen, null, this);
                 game.physics.arcade.collide(ball, pegsRed, ballHitPegRed, null, this);
+                game.physics.arcade.collide(ball, bucket1, ballHitBigBucket, null, this);
+                game.physics.arcade.collide(ball, bucket2, ballHitMediumBucket, null, this);
+                game.physics.arcade.collide(ball, bucket3, ballHitSmallBucket, null, this);
+                game.physics.arcade.collide(ball, bucket4, ballHitMediumBucket, null, this);
+                game.physics.arcade.collide(ball, bucket5, ballHitBigBucket, null, this);
             }
         }
 
@@ -186,6 +236,24 @@
             {
                 _ball.body.velocity.x = 5 + Math.random() * 8;
             }
+        }
+
+        function ballHitBigBucket(_ball, _bucket) {
+            score = score + 1;
+            scoreText.text = 'score: ' + score;
+            ballLost();
+        }
+
+        function ballHitMediumBucket(_ball, _bucket) {
+            score = score + 2;
+            scoreText.text = 'score: ' + score;
+            ballLost();
+        }
+
+        function ballHitSmallBucket(_ball, _bucket) {
+            score = score + 3;
+            scoreText.text = 'score: ' + score;
+            ballLost();
         }
         
         function render() {
