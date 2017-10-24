@@ -68,7 +68,7 @@
 
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 2; x++) {
-                    peg_red = pegsGreen.create(240 + (x * 300), 100 + (y * 140), 'peg_red');
+                    peg_red = pegsRed.create(240 + (x * 300), 100 + (y * 140), 'peg_red');
                     peg_red.body.immovable = true;
                     peg_red.body.moves = false;
                 }
@@ -76,7 +76,7 @@
 
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 2; x++) {
-                    peg_red = pegsGreen.create(150 + (x * 480), 170 + (y * 140), 'peg_red');
+                    peg_red = pegsRed.create(150 + (x * 480), 170 + (y * 140), 'peg_red');
                     peg_red.body.immovable = true;
                     peg_red.body.moves = false;
                 }
@@ -201,16 +201,16 @@
             if (_ball.x < _peg.x)
             {
                 diff = _peg.x - _ball.x;
-                _ball.body.velocity.x = (-5 * diff);
+                _ball.body.velocity.x = (-3 * diff);
             }
             else if (_ball.x > _peg.x)
             {
                 diff = _ball.x -_peg.x;
-                _ball.body.velocity.x = (5 * diff);
+                _ball.body.velocity.x = (3 * diff);
             }
             else
             {
-                _ball.body.velocity.x = 5 + Math.random() * 8;
+                _ball.body.velocity.x = 3 + Math.random() * 8;
             }
         }
 
@@ -220,16 +220,16 @@
             if (_ball.x < _peg.x)
             {
                 diff = _peg.x - _ball.x;
-                _ball.body.velocity.x = (-5 * diff);
+                _ball.body.velocity.x = (-3 * diff);
             }
             else if (_ball.x > _peg.x)
             {
                 diff = _ball.x -_peg.x;
-                _ball.body.velocity.x = (5 * diff);
+                _ball.body.velocity.x = (3 * diff);
             }
             else
             {
-                _ball.body.velocity.x = 5 + Math.random() * 8;
+                _ball.body.velocity.x = 3 + Math.random() * 8;
             }
         }
 
