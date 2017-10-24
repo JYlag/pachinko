@@ -21,8 +21,8 @@
       <file leaf-file-name="game.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+            <state relative-caret-position="562">
+              <caret line="231" column="41" lean-forward="false" selection-start-line="231" selection-start-column="41" selection-end-line="231" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -490,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508633408575</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Changed background so images would not overlap">
+      <created>1508806966021</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1508806966021</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -549,7 +556,8 @@
     <MESSAGE value="Fixed Bug: Game Screen was cut off on the bottom." />
     <MESSAGE value="Added transparent cannon, colored blocks, and bucket sprite" />
     <MESSAGE value="better physics" />
-    <option name="LAST_COMMIT_MESSAGE" value="better physics" />
+    <MESSAGE value="Changed background so images would not overlap" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed background so images would not overlap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -911,8 +919,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+        <state relative-caret-position="562">
+          <caret line="231" column="41" lean-forward="false" selection-start-line="231" selection-start-column="41" selection-end-line="231" selection-end-column="41" />
           <folding />
         </state>
       </provider>
