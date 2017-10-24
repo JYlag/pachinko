@@ -17,6 +17,11 @@ h1 {
     font-family: 'Bungee Inline', sans-serif;
 }
 
+h2, h3 {
+    font-family: 'Bungee', sans-serif;
+    text-align: center;
+}
+
 nav {
     font-family: 'Bungee', sans-serif;
 }
@@ -25,13 +30,16 @@ canvas {
     display: block;
     margin: auto;
     padding: 0px;
+    border: 5px solid blanchedalmond;
+    border-radius: 30px;
+    border-top-left-radius: 0px;
 }
 
 .main_desc {
     padding: 15px;
     margin-bottom: 30px;
     background-color: rgb(44,44,44);
-    border: 3px solid blanchedalmond;
+    border: 5px solid blanchedalmond;
     border-radius: 30px;
     border-top-left-radius: 0px;
 }
@@ -49,6 +57,11 @@ canvas {
 
 figure {
     display: inline-block;
+    font-family: 'Bungee', sans-serif;
+}
+
+figure a {
+    color: blanchedalmond;
 }
 
 .center {

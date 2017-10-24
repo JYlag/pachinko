@@ -15,7 +15,7 @@ def verify_passwords(password,verify_pass):
 
 @app.before_request
 def require_login():
-    allowed_routes = ['login', 'signup', 'index', 'contact']
+    allowed_routes = ['login', 'signup', 'index', 'contact', 'static']
     if request.endpoint not in allowed_routes and 'user' not in session:
         return redirect('/login')
 
