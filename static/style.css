@@ -35,3 +35,22 @@ canvas {
     border-radius: 30px;
     border-top-left-radius: 0px;
 }
+
+.photo {
+    display: inline-block;
+    margin: 25px;
+    margin-bottom: 10px;
+    border: 15px solid blanchedalmond;
+    border-radius: 75px;
+    border-top-left-radius: 0px;
+    height: 200px;
+    width: 200px;
+}
+
+figure {
+    display: inline-block;
+}
+
+.center {
+    text-align: center;
+}

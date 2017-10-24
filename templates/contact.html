@@ -3,12 +3,32 @@
 {% block content %}
     <div class='main_desc'>
         <h2>The Team!</h2>
-        <ul>
-            <li><a target="_blank" href="https://www.linkedin.com/in/sigala-hernandez-radosevich-a03b46123/">Sigala Hernandez</a></li>
-            <li><a target="_blank" href="https://www.linkedin.com/in/spencer-h-95690191/">Spencer Hirata</a></li>
-            <li><a target="_blank" href="https://www.linkedin.com/in/joseph-ylagan-a21898bb/">Joe Ylagan</a></li>
-            <li><a target="_blank" href="https://www.linkedin.com/in/austin-lesure-99a75231/">Austin LeSure</a></li>
-        </ul>
+        <div class='center'>
+            <figure>
+                <a target="_blank" href="https://www.linkedin.com/in/sigala-hernandez-radosevich-a03b46123/">
+                    <img class='photo' src='{{ url_for('static', filename='images/photos/sigala.jpg') }}' alt='Sigala Hernandez'>
+                    <figcaption>Sigala Hernandez</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a target="_blank" href="https://www.linkedin.com/in/spencer-h-95690191/">
+                    <img class='photo' src='{{ url_for('static', filename='images/photos/spencer.jpg') }}' alt='Spencer Hirata'>
+                    <figcaption>Spencer Hirata</figcaption>
+                </a>
+            </figure>
+            <figure>
+                <a target="_blank" href="https://www.linkedin.com/in/joseph-ylagan-a21898bb/">
+                    <img class='photo' src='{{ url_for('static', filename='images/photos/joe.jpg ') }}' alt='Joe Ylagan'>
+                    <figcaption>Joe Ylagan</figcaption>
+                </a>
+            </figure>
+            <figure>
+            <a target="_blank" href="https://www.linkedin.com/in/austin-lesure-99a75231/">
+                <img class='photo' src='{{ url_for('static', filename='images/photos/austin.png ') }}' alt='Austin LeSure'>
+                <figcaption>Austin LeSure</figcaption>
+            </a>
+        </figure>
+        </div>
     </div>
 
     <div class='main_desc'>
