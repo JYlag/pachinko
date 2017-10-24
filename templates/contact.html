@@ -11,29 +11,28 @@
         </ul>
     </div>
 
-    <div>
+    <div class='main_desc'>
     <h3>Like our game?</h3>
     <p>Fill out this form to let us know how awesome it is! You can also report any bugs, suggestions, or any questions. OR you can just stop by and say hi!</p>
-    </div>
-
-    <div>
-        <form action="/contact" method="post">
-            <table>
-                <tr>
-                    <td><label for="name">Your Full Name:</label></td>
-                    <td>
-                        <input type="text" name="name" value="{{ name }}">
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="message">Your message!</label></td>
-                    <td>
-                        <textarea name="message" type="text" value="{{ message }}"></textarea>
-                    </td>
-                </tr>
-            </table>
-            <input type="submit" value="Send!">
-        </form>
+        <div>
+            <form action="/contact" method="post">
+                <table>
+                    <tr>
+                        <td><label for="name">Your Full Name:</label></td>
+                        <td>
+                            <input type="text" name="name" value="{{ name }}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="message">Your message!</label></td>
+                        <td>
+                            <textarea name="message" type="text" value="{{ message }}"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" value="Send!">
+            </form>
+        </div>
     </div>
 
 {% endblock %}

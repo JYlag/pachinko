@@ -2,8 +2,7 @@
 
 {% block content %}
 <script src="//cdn.jsdelivr.net/phaser/2.5.0/phaser.min.js"></script>
-<div class='main_desc'>
-	<p><em>Insert Game Here</em></p>
+<div class='center'>
 	<script type="text/javascript">
 
         var game = new Phaser.Game(800, 640, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
@@ -107,7 +106,7 @@
             game.physics.enable(bucket1, Phaser.Physics.ARCADE);
             bucket1.body.immovable = true;
             bucket1.body.moves = false;
-            bucket1.body.setSize(200, 10, 0, 100);
+            bucket1.body.setSize(120, 10, 0, 100);
 
             bucket2 = game.add.sprite(195, 550, 'bucket');
 
@@ -116,9 +115,8 @@
             bucket2.scale.setTo(0.7);
             bucket2.body.immovable = true;
             bucket2.body.moves = false;
-            bucket2.body.setSize(140, 10, 0, 70);
+            bucket2.body.setSize(85, 10, 0, 70);
             
-
             bucket3 = game.add.sprite(365, 575, 'bucket');
 
             game.physics.enable(bucket3, Phaser.Physics.ARCADE);
@@ -126,7 +124,7 @@
             bucket3.scale.setTo(0.5);
             bucket3.body.immovable = true;
             bucket3.body.moves = false;
-            bucket3.body.setSize(100, 10, 0, 50);
+            bucket3.body.setSize(60, 10, 0, 50);
 
             bucket4 = game.add.sprite(505, 550, 'bucket');
 
@@ -135,7 +133,7 @@
             bucket4.scale.setTo(0.7);
             bucket4.body.immovable = true;
             bucket4.body.moves = false;
-            bucket4.body.setSize(140, 10, 0, 70);
+            bucket4.body.setSize(85, 10, 0, 70);
 
             bucket5 = game.add.sprite(650, 515, 'bucket');
 
@@ -143,7 +141,7 @@
 
             bucket5.body.immovable = true;
             bucket5.body.moves = false;
-            bucket5.body.setSize(200, 10, 0, 100);
+            bucket5.body.setSize(120, 10, 0, 100);
 
             game.physics.enable(ball, Phaser.Physics.ARCADE);
 
@@ -177,6 +175,7 @@
             else {
                 game.physics.arcade.collide(ball, pegsGreen, ballHitPegGreen, null, this);
                 game.physics.arcade.collide(ball, pegsRed, ballHitPegRed, null, this);
+
                 game.physics.arcade.collide(ball, bucket1, ballHitBigBucket, null, this);
                 game.physics.arcade.collide(ball, bucket2, ballHitMediumBucket, null, this);
                 game.physics.arcade.collide(ball, bucket3, ballHitSmallBucket, null, this);
