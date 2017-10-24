@@ -48,7 +48,10 @@
 
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 12; x++) {
-                    peg_green = pegsGreen.create(60 + (x * 60), 100 + (y * 140), 'peg_green');
+                    if (x == 3 || x == 8) {
+                            continue;
+                        }
+                    peg_green = pegsGreen.create(60 + (x * 60) + game.rnd.integerInRange(-8, 8), 100 + (y * 140), 'peg_green');
                     peg_green.body.immovable = true;
                     peg_green.body.moves = false;
                 }
@@ -56,7 +59,10 @@
 
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 14; x++) {
-                    peg_green = pegsGreen.create(30 + (x * 60), 170 + (y * 140), 'peg_green');
+                    if (x==2 || x == 10) {
+                        continue;
+                    }
+                    peg_green = pegsGreen.create(30 + (x * 60) + game.rnd.integerInRange(-8, 8), 170 + (y * 140), 'peg_green');
                     peg_green.body.immovable = true;
                     peg_green.body.moves = false;
                 }
@@ -68,7 +74,7 @@
 
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 2; x++) {
-                    peg_red = pegsRed.create(240 + (x * 300), 100 + (y * 140), 'peg_red');
+                    peg_red = pegsRed.create(240 + (x * 300) + game.rnd.integerInRange(-8, 8), 100 + (y * 140), 'peg_red');
                     peg_red.body.immovable = true;
                     peg_red.body.moves = false;
                 }
@@ -76,7 +82,7 @@
 
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 2; x++) {
-                    peg_red = pegsRed.create(150 + (x * 480), 170 + (y * 140), 'peg_red');
+                    peg_red = pegsRed.create(150 + (x * 480) + game.rnd.integerInRange(-8, 8), 170 + (y * 140), 'peg_red');
                     peg_red.body.immovable = true;
                     peg_red.body.moves = false;
                 }
@@ -144,7 +150,7 @@
             ball.body.collideWorldBounds = true;
             ball.body.bounce.set(.5);
 
-            ball.events.onOutOfBounds.add(ballLost, this);
+            ball.events.onOutOfBounds.add(gameReset, this);
 
             scoreText = game.add.text(32, 550, 'score: ' + score, { font: "20px Arial", fill: "#000", align: "left" });
             introText = game.add.text(game.world.centerX, 400, '- click to start -', { font: "40px Arial", fill: "#000", align: "center" });
@@ -189,10 +195,9 @@
             }
         }
 
-        function ballLost () {
+        function gameReset () {
+            this.game.state.restart()
             ballInCannon = true;
-            ball.reset(cannon.body.x - 13, cannon.y + 27);
-            game.physics.arcade.gravity.y = 0;
         }
 
         function ballHitPegGreen (_ball, _peg) {
@@ -215,7 +220,7 @@
         }
 
         function ballHitPegRed (_ball, _peg) {
-            ball.body.bounce.set(20);
+            ball.body.bounce.set(1);
             var diff = 0;
             if (_ball.x < _peg.x)
             {
@@ -236,19 +241,19 @@
         function ballHitBigBucket(_ball, _bucket) {
             score = score + 1;
             scoreText.text = 'score: ' + score;
-            ballLost();
+            gameReset();
         }
 
         function ballHitMediumBucket(_ball, _bucket) {
             score = score + 2;
             scoreText.text = 'score: ' + score;
-            ballLost();
+            gameReset();
         }
 
         function ballHitSmallBucket(_ball, _bucket) {
             score = score + 3;
             scoreText.text = 'score: ' + score;
-            ballLost();
+            gameReset();
         }
         
         function render() {
