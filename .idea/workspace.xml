@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e596ab80-c739-45ac-b474-d2db1219bd38" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/images/physicalBucketWall.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/static/images/turtle.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/contact.html" afterPath="$PROJECT_DIR$/templates/contact.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/game.html" afterPath="$PROJECT_DIR$/templates/game.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,22 +20,31 @@
       <file leaf-file-name="game.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2472">
-              <caret line="249" column="0" lean-forward="true" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
+            <state relative-caret-position="473">
+              <caret line="171" column="12" lean-forward="false" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="12" />
               <folding>
-                <element signature="e#4041#4460#0#HTML" expanded="false" />
-                <element signature="e#4571#4981#0#HTML" expanded="false" />
-                <element signature="e#5073#5375#0#HTML" expanded="false" />
-                <element signature="e#5466#5768#0#HTML" expanded="false" />
-                <element signature="e#6034#7447#0#HTML" expanded="false" />
-                <element signature="e#9271#9474#0#HTML" expanded="false" />
-                <element signature="e#9506#9588#0#HTML" expanded="false" />
-                <element signature="e#9637#10135#0#HTML" expanded="false" />
-                <element signature="e#10182#10679#0#HTML" expanded="false" />
-                <element signature="e#10937#11052#0#HTML" expanded="false" />
-                <element signature="e#11107#11222#0#HTML" expanded="false" />
-                <element signature="e#11276#11391#0#HTML" expanded="false" />
+                <element signature="e#4954#5373#0#HTML" expanded="false" />
+                <element signature="e#5484#5894#0#HTML" expanded="false" />
+                <element signature="e#5986#6288#0#HTML" expanded="false" />
+                <element signature="e#6379#6681#0#HTML" expanded="false" />
+                <element signature="e#6960#8373#0#HTML" expanded="false" />
+                <element signature="e#10207#10410#0#HTML" expanded="false" />
+                <element signature="e#10442#10524#0#HTML" expanded="false" />
+                <element signature="e#10573#11071#0#HTML" expanded="false" />
+                <element signature="e#11118#11615#0#HTML" expanded="false" />
+                <element signature="e#12043#12158#0#HTML" expanded="false" />
+                <element signature="e#12212#12327#0#HTML" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,7 +52,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-254">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -72,6 +78,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="54">
               <caret line="26" column="95" lean-forward="true" selection-start-line="26" selection-start-column="95" selection-end-line="26" selection-end-column="95" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="60" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -526,11 +542,18 @@
       <option name="project" value="LOCAL" />
       <updated>1508806966021</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added Corner physics to the buckets">
+      <created>1508977370096</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1508977370096</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10627000" />
+    <option name="totallyTimeSpent" value="12345000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -605,7 +628,8 @@
     <MESSAGE value="Added transparent cannon, colored blocks, and bucket sprite" />
     <MESSAGE value="better physics" />
     <MESSAGE value="Changed background so images would not overlap" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed background so images would not overlap" />
+    <MESSAGE value="Added Corner physics to the buckets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Corner physics to the buckets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -836,13 +860,6 @@
       </provider>
     </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py" />
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="60" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/signup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -897,13 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/images/redBall.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -942,14 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/contact.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -958,30 +960,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/game.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2472">
-          <caret line="249" column="0" lean-forward="true" selection-start-line="249" selection-start-column="0" selection-end-line="249" selection-end-column="0" />
-          <folding>
-            <element signature="e#4041#4460#0#HTML" expanded="false" />
-            <element signature="e#4571#4981#0#HTML" expanded="false" />
-            <element signature="e#5073#5375#0#HTML" expanded="false" />
-            <element signature="e#5466#5768#0#HTML" expanded="false" />
-            <element signature="e#6034#7447#0#HTML" expanded="false" />
-            <element signature="e#9271#9474#0#HTML" expanded="false" />
-            <element signature="e#9506#9588#0#HTML" expanded="false" />
-            <element signature="e#9637#10135#0#HTML" expanded="false" />
-            <element signature="e#10182#10679#0#HTML" expanded="false" />
-            <element signature="e#10937#11052#0#HTML" expanded="false" />
-            <element signature="e#11107#11222#0#HTML" expanded="false" />
-            <element signature="e#11276#11391#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/images/physicalBucketWall.png">
       <provider selected="true" editor-type-id="images">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-254">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="60" lean-forward="false" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/game.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="171" column="12" lean-forward="false" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="12" />
+          <folding>
+            <element signature="e#4954#5373#0#HTML" expanded="false" />
+            <element signature="e#5484#5894#0#HTML" expanded="false" />
+            <element signature="e#5986#6288#0#HTML" expanded="false" />
+            <element signature="e#6379#6681#0#HTML" expanded="false" />
+            <element signature="e#6960#8373#0#HTML" expanded="false" />
+            <element signature="e#10207#10410#0#HTML" expanded="false" />
+            <element signature="e#10442#10524#0#HTML" expanded="false" />
+            <element signature="e#10573#11071#0#HTML" expanded="false" />
+            <element signature="e#11118#11615#0#HTML" expanded="false" />
+            <element signature="e#12043#12158#0#HTML" expanded="false" />
+            <element signature="e#12212#12327#0#HTML" expanded="false" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

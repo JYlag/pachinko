@@ -13,7 +13,7 @@
             game.load.spritesheet('peg_green', '/static/images/greenBlock.png');
             game.load.spritesheet('cannon', '/static/images/cannon.png');
             game.load.spritesheet('boundary', '/static/images/wallBoundary.png');
-            game.load.image('bucketBackground', '/static/images/bucketBackground.png');
+            game.load.spritesheet('bucketBackground', '/static/images/bucketBackground.png');
             game.load.image('bucketForeground', '/static/images/bucketForeground.png');
             //game.load.spritesheet('bucket', '/static/images/bucket.png');
         }
@@ -59,6 +59,8 @@
             boundary.physicsBodyType = Phaser.Physics.ARCADE;
 
             bucketBackgrounds = game.add.group();
+            bucketBackgrounds.enableBody = true;
+            bucketBackgrounds.physicsBodyType = Phaser.Physics.ARCADE;
 
             ball = game.add.sprite(400, cannon.y + 27, 'ball');
             ball.scale.setTo(0.1);
@@ -68,7 +70,6 @@
             bucketForegrounds = game.add.group();
 
             //Creates buckets
-            for (var y = 0; y < 1; y++) {
                 for (var x = 0; x < 5; x++) {
                     bucketBackground = bucketBackgrounds.create(80 + (x * 160), 640, 'bucketBackground');
                     bucketForeground = bucketForegrounds.create(80 + (x * 160), 640, 'bucketForeground');
@@ -78,18 +79,32 @@
                     if (x == 0 || x == 4) {
                         bucketBackground.scale.setTo(0.75);
                         bucketForeground.scale.setTo(0.75);
+
+                        game.physics.enable(bucketBackground, Phaser.Physics.ARCADE);
+                        bucketBackground.body.immovable = true;
+                        bucketBackground.body.moves = false;
+                        bucketBackground.body.setSize(170, 0, 10, 80);
                     }
 
                     else if (x == 1 || x == 3) {
                         bucketBackground.scale.setTo(0.48);
                         bucketForeground.scale.setTo(0.48);
+
+                        game.physics.enable(bucketBackground, Phaser.Physics.ARCADE);
+                        bucketBackground.body.immovable = true;
+                        bucketBackground.body.moves = false;
+                        bucketBackground.body.setSize(140, 0, 8, 80);
                     }
 
                     else {
                         bucketBackground.scale.setTo(0.4);
                         bucketForeground.scale.setTo(0.4);
+
+                        game.physics.enable(bucketBackground, Phaser.Physics.ARCADE);
+                        bucketBackground.body.immovable = true;
+                        bucketBackground.body.moves = false;
+                        bucketBackground.body.setSize(130, 0, 4, 80);
                     }
-                }
             }
 
             //Places boundary pixels
@@ -154,6 +169,7 @@
                     peg_red.body.moves = false;
                 }
             }
+            
 
 
             game.physics.enable(cannon, Phaser.Physics.ARCADE);
@@ -240,8 +256,8 @@
                 game.physics.arcade.collide(ball, pegsGreen, ballHitPegGreen, null, this);
                 game.physics.arcade.collide(ball, pegsRed, ballHitPegRed, null, this);
 
-                /*game.physics.arcade.collide(ball, bucket1, ballHitBigBucket, null, this);
-                game.physics.arcade.collide(ball, bucket2, ballHitMediumBucket, null, this);
+                game.physics.arcade.collide(ball, bucketBackgrounds, ballHitBigBucket, null, this);
+                /*game.physics.arcade.collide(ball, bucket2, ballHitMediumBucket, null, this);
                 game.physics.arcade.collide(ball, bucket3, ballHitSmallBucket, null, this);
                 game.physics.arcade.collide(ball, bucket4, ballHitMediumBucket, null, this);
                 game.physics.arcade.collide(ball, bucket5, ballHitBigBucket, null, this);*/
