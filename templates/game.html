@@ -153,39 +153,43 @@
                     if (x == 3 || x == 8) {
                             continue;
                         }
-                    peg_green = pegsGreen.create(60 + (x * 60) + game.rnd.integerInRange(-8, 8), 100 + (y * 140), 'peg_green');
+                    peg_green = pegsGreen.create(60 + (x * 60) + game.rnd.integerInRange(-5, 5), 100 + (y * 140), 'peg_green');
                     peg_green.body.immovable = true;
                     peg_green.body.moves = false;
+                    peg_green.anchor.setTo(0.5,0);
                 }
             }
 
             //Creates green pegs for the 2nd and 4th Row. Skips red.
             for (var y = 0; y < 2; y++) {
-                for (var x = 0; x < 14; x++) {
+                for (var x = 0; x < 13; x++) {
                     if (x==2 || x == 10) {
                         continue;
                     }
-                    peg_green = pegsGreen.create(30 + (x * 60) + game.rnd.integerInRange(-8, 8), 170 + (y * 140), 'peg_green');
+                    peg_green = pegsGreen.create(30 + (x * 60) + game.rnd.integerInRange(-5, 5), 170 + (y * 140), 'peg_green');
                     peg_green.body.immovable = true;
                     peg_green.body.moves = false;
+                    peg_green.anchor.setTo(0.5,0);
                 }
             }
 
             // Creates red peg in 1st and 3rd row
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 2; x++) {
-                    peg_red = pegsRed.create(240 + (x * 300) + game.rnd.integerInRange(-8, 8), 100 + (y * 140), 'peg_red');
+                    peg_red = pegsRed.create(240 + (x * 300) + game.rnd.integerInRange(-5, 5), 100 + (y * 140), 'peg_red');
                     peg_red.body.immovable = true;
                     peg_red.body.moves = false;
+                    peg_red.anchor.setTo(0.5,0);
                 }
             }
 
             // Create red peg in 2nd and 4th row
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 2; x++) {
-                    peg_red = pegsRed.create(150 + (x * 480) + game.rnd.integerInRange(-8, 8), 170 + (y * 140), 'peg_red');
+                    peg_red = pegsRed.create(150 + (x * 480) + game.rnd.integerInRange(-5, 5), 170 + (y * 140), 'peg_red');
                     peg_red.body.immovable = true;
                     peg_red.body.moves = false;
+                    peg_red.anchor.setTo(0.5,0);
                 }
             }
             
@@ -304,16 +308,16 @@
             if (_ball.x < _peg.x)
             {
                 diff = _peg.x - _ball.x;
-                _ball.body.velocity.x = (-3 * diff);
+                _ball.body.velocity.x = (-2.5 * diff);
             }
             else if (_ball.x > _peg.x)
             {
                 diff = _ball.x -_peg.x;
-                _ball.body.velocity.x = (3 * diff);
+                _ball.body.velocity.x = (2.5 * diff);
             }
             else
             {
-                _ball.body.velocity.x = 3 + Math.random() * 8;
+                _ball.body.velocity.x = 2.5 + Math.random() * 8;
             }
         }
 

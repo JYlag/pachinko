@@ -21,8 +21,8 @@
       <file leaf-file-name="game.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/game.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="270" column="44" lean-forward="true" selection-start-line="270" selection-start-column="44" selection-end-line="270" selection-end-column="44" />
+            <state relative-caret-position="578">
+              <caret line="319" column="43" lean-forward="false" selection-start-line="319" selection-start-column="43" selection-end-line="319" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -516,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1508977370096</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added slides on the side so people can not drop the ball down the side">
+      <created>1508984351904</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1508984351905</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -575,7 +582,8 @@
     <MESSAGE value="better physics" />
     <MESSAGE value="Changed background so images would not overlap" />
     <MESSAGE value="Added Corner physics to the buckets" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Corner physics to the buckets" />
+    <MESSAGE value="Added slides on the side so people can not drop the ball down the side" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added slides on the side so people can not drop the ball down the side" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -930,8 +938,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/game.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="270" column="44" lean-forward="true" selection-start-line="270" selection-start-column="44" selection-end-line="270" selection-end-column="44" />
+        <state relative-caret-position="578">
+          <caret line="319" column="43" lean-forward="false" selection-start-line="319" selection-start-column="43" selection-end-line="319" selection-end-column="43" />
           <folding />
         </state>
       </provider>
