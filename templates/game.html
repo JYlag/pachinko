@@ -27,6 +27,9 @@
         var peg_green;
         var peg_red;
 
+        var slides;
+        var slide;
+
         var cannon;
         var ballInCannon = true;
 
@@ -48,6 +51,22 @@
             game.physics.arcade.checkCollision.down = false;
 
             game.stage.backgroundColor = "#4488AA";
+
+            slides = game.add.group();
+            slides.enableBody = true;
+            slides.physicsBodyType = Phaser.Physics.ARCADE;
+
+            for (y = 0; y < 20; y++) {
+                slide = slides.create(y * 2, 65 + y, 'boundary');
+                slide.body.immovable = true;
+                slide.body.moves = false;
+            }
+
+            for (y = 0; y < 20; y++) {
+                slide = slides.create(800 - y * 2, 65 + y, 'boundary');
+                slide.body.immovable = true;
+                slide.body.moves = false;
+            }
 
             cannon = game.add.sprite(400, 30, 'cannon');
             cannon.scale.setTo(0.07, 0.07);
@@ -253,10 +272,11 @@
             }
             else {
                 game.physics.arcade.collide(ball, boundary, ballHitPegGreen, null, this);
+                game.physics.arcade.collide(ball, slides, ballHitPegGreen, null, this);
                 game.physics.arcade.collide(ball, pegsGreen, ballHitPegGreen, null, this);
-                game.physics.arcade.collide(ball, pegsRed, ballHitPegRed, null, this);
+                game.physics.arcade.collide(ball, pegsRed, ballHitPegGreen, null, this);
 
-                game.physics.arcade.collide(ball, bucketBackgrounds, ballHitBigBucket, null, this);
+                game.physics.arcade.collide(ball, bucketBackgrounds, ballHitBucket, null, this);
                 /*game.physics.arcade.collide(ball, bucket2, ballHitMediumBucket, null, this);
                 game.physics.arcade.collide(ball, bucket3, ballHitSmallBucket, null, this);
                 game.physics.arcade.collide(ball, bucket4, ballHitMediumBucket, null, this);
@@ -323,7 +343,7 @@
             pixelBoundary.body.moves = false;
         }
 
-        function ballHitBigBucket(_ball, _bucket) {
+        function ballHitBucket(_ball, _bucket) {
             score = score + 1;
             scoreText.text = 'score: ' + score;
             gameReset();
