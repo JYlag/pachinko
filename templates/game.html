@@ -12,25 +12,35 @@
             game.load.spritesheet('peg_red', '/static/images/redBlock.png');
             game.load.spritesheet('peg_green', '/static/images/greenBlock.png');
             game.load.spritesheet('cannon', '/static/images/cannon.png');
-            game.load.spritesheet('bucket', '/static/images/bucket.png');
+            game.load.spritesheet('boundary', '/static/images/wallBoundary.png');
+            game.load.image('bucketBackground', '/static/images/bucketBackground.png');
+            game.load.image('bucketForeground', '/static/images/bucketForeground.png');
+            //game.load.spritesheet('bucket', '/static/images/bucket.png');
         }
 
 
 
         var ball;
+
         var pegsGreen;
         var pegsRed;
-        var cannon;
-        var bucket;
+        var peg_green;
+        var peg_red;
 
+        var cannon;
         var ballInCannon = true;
 
-        var score = 0;
+        var bucketBackgrounds;
+        var bucketForegrounds;
+        var bucketBackground;
+        var bucketForeground;
+        var boundary;
+        var pixelBoundary;
+        //var bucket;
 
+        var score = 0;
         var scoreText;
         var introText;
-
-        var background;
 
         function create() {
             game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -39,13 +49,71 @@
 
             game.stage.backgroundColor = "#4488AA";
 
+            cannon = game.add.sprite(400, 30, 'cannon');
+            cannon.scale.setTo(0.07, 0.07);
+            cannon.anchor.setTo(0.5, 0.5);
+
+            //Creating bucket layers
+            boundary = game.add.group();
+            boundary.enableBody = true;
+            boundary.physicsBodyType = Phaser.Physics.ARCADE;
+
+            bucketBackgrounds = game.add.group();
+
+            ball = game.add.sprite(400, cannon.y + 27, 'ball');
+            ball.scale.setTo(0.1);
+            ball.anchor.set(0.5);
+            ball.checkWorldBounds = true;
+
+            bucketForegrounds = game.add.group();
+
+            //Creates buckets
+            for (var y = 0; y < 1; y++) {
+                for (var x = 0; x < 5; x++) {
+                    bucketBackground = bucketBackgrounds.create(80 + (x * 160), 640, 'bucketBackground');
+                    bucketForeground = bucketForegrounds.create(80 + (x * 160), 640, 'bucketForeground');
+                    bucketBackground.anchor.setTo(0.5,1);
+                    bucketForeground.anchor.setTo(0.5,1);
+
+                    if (x == 0 || x == 4) {
+                        bucketBackground.scale.setTo(0.75);
+                        bucketForeground.scale.setTo(0.75);
+                    }
+
+                    else if (x == 1 || x == 3) {
+                        bucketBackground.scale.setTo(0.48);
+                        bucketForeground.scale.setTo(0.48);
+                    }
+
+                    else {
+                        bucketBackground.scale.setTo(0.4);
+                        bucketForeground.scale.setTo(0.4);
+                    }
+                }
+            }
+
+            //Places boundary pixels
+            placeBoundary(794,524);
+            placeBoundary(644,524);
+            placeBoundary(607,566);
+            placeBoundary(511,566);
+            placeBoundary(439,578);
+            placeBoundary(359,578);
+            placeBoundary(287,566);
+            placeBoundary(191,566);
+            placeBoundary(154,524);
+            placeBoundary(4,524);
+
             pegsGreen = game.add.group();
             pegsGreen.enableBody = true;
             pegsGreen.physicsBodyType = Phaser.Physics.ARCADE;
 
-            var peg_green;
-            var peg_red;
+            pegsRed = game.add.group();
+            pegsRed.enableBody = true;
+            pegsRed.physicsBodyType = Phaser.Physics.ARCADE;
 
+
+            // Creates green pegs for the 1st and 3rd Row. Skips Red.
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 12; x++) {
                     if (x == 3 || x == 8) {
@@ -57,6 +125,7 @@
                 }
             }
 
+            //Creates green pegs for the 2nd and 4th Row. Skips red.
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 14; x++) {
                     if (x==2 || x == 10) {
@@ -68,10 +137,7 @@
                 }
             }
 
-            pegsRed = game.add.group();
-            pegsRed.enableBody = true;
-            pegsRed.physicsBodyType = Phaser.Physics.ARCADE;
-
+            // Creates red peg in 1st and 3rd row
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 2; x++) {
                     peg_red = pegsRed.create(240 + (x * 300) + game.rnd.integerInRange(-8, 8), 100 + (y * 140), 'peg_red');
@@ -80,6 +146,7 @@
                 }
             }
 
+            // Create red peg in 2nd and 4th row
             for (var y = 0; y < 2; y++) {
                 for (var x = 0; x < 2; x++) {
                     peg_red = pegsRed.create(150 + (x * 480) + game.rnd.integerInRange(-8, 8), 170 + (y * 140), 'peg_red');
@@ -88,9 +155,6 @@
                 }
             }
 
-            cannon = game.add.sprite(400, 30, 'cannon');
-            cannon.scale.setTo(0.07, 0.07);
-            cannon.anchor.setTo(0.5, 0.5);
 
             game.physics.enable(cannon, Phaser.Physics.ARCADE);
 
@@ -98,12 +162,8 @@
             cannon.body.immovable = true;
             cannon.body.moves = false;
 
-            ball = game.add.sprite(400, cannon.y + 27, 'ball');
-            ball.scale.setTo(0.1);
-            ball.anchor.set(0.5);
-            ball.checkWorldBounds = true;
-
-            bucket1 = game.add.sprite(10, 515, 'bucket');
+            //Manuau Bucket Sprites -- no boundaries
+            /*bucket1 = game.add.sprite(10, 515, 'bucket');
 
             game.physics.enable(bucket1, Phaser.Physics.ARCADE);
             bucket1.body.immovable = true;
@@ -143,7 +203,7 @@
 
             bucket5.body.immovable = true;
             bucket5.body.moves = false;
-            bucket5.body.setSize(120, 10, 0, 100);
+            bucket5.body.setSize(120, 10, 0, 100);*/
 
             game.physics.enable(ball, Phaser.Physics.ARCADE);
 
@@ -152,6 +212,7 @@
 
             ball.events.onOutOfBounds.add(gameReset, this);
 
+            //Set Score Text onto playing screen
             scoreText = game.add.text(32, 550, 'score: ' + score, { font: "20px Arial", fill: "#000", align: "left" });
             introText = game.add.text(game.world.centerX, 400, '- click to start -', { font: "40px Arial", fill: "#000", align: "center" });
             introText.anchor.setTo(0.5, 0.5);
@@ -175,14 +236,15 @@
                 ball.body.x = cannon.x - 13;
             }
             else {
+                game.physics.arcade.collide(ball, boundary, ballHitPegGreen, null, this);
                 game.physics.arcade.collide(ball, pegsGreen, ballHitPegGreen, null, this);
                 game.physics.arcade.collide(ball, pegsRed, ballHitPegRed, null, this);
 
-                game.physics.arcade.collide(ball, bucket1, ballHitBigBucket, null, this);
+                /*game.physics.arcade.collide(ball, bucket1, ballHitBigBucket, null, this);
                 game.physics.arcade.collide(ball, bucket2, ballHitMediumBucket, null, this);
                 game.physics.arcade.collide(ball, bucket3, ballHitSmallBucket, null, this);
                 game.physics.arcade.collide(ball, bucket4, ballHitMediumBucket, null, this);
-                game.physics.arcade.collide(ball, bucket5, ballHitBigBucket, null, this);
+                game.physics.arcade.collide(ball, bucket5, ballHitBigBucket, null, this);*/
             }
         }
 
@@ -236,6 +298,13 @@
             {
                 _ball.body.velocity.x = 3 + Math.random() * 8;
             }
+        }
+
+        function placeBoundary(x,y) {
+
+            pixelBoundary = boundary.create(x,y,'boundary');
+            pixelBoundary.body.immovable = true;
+            pixelBoundary.body.moves = false;
         }
 
         function ballHitBigBucket(_ball, _bucket) {
