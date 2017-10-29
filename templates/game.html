@@ -15,7 +15,7 @@
             game.load.spritesheet('boundary', '/static/images/wallBoundary.png');
             game.load.spritesheet('bucketBackground', '/static/images/bucketBackground.png');
             game.load.image('bucketForeground', '/static/images/bucketForeground.png');
-            //game.load.spritesheet('bucket', '/static/images/bucket.png');
+            game.load.image('button', '/static/images/unpressed.png');
         }
 
 
@@ -43,7 +43,7 @@
 
         var score = 0;
         var scoreText;
-        var introText;
+        var introClick;
 
         function create() {
             game.physics.startSystem(Phaser.Physics.ARCADE);
@@ -201,48 +201,6 @@
             cannon.body.immovable = true;
             cannon.body.moves = false;
 
-            //Manuau Bucket Sprites -- no boundaries
-            /*bucket1 = game.add.sprite(10, 515, 'bucket');
-
-            game.physics.enable(bucket1, Phaser.Physics.ARCADE);
-            bucket1.body.immovable = true;
-            bucket1.body.moves = false;
-            bucket1.body.setSize(120, 10, 0, 100);
-
-            bucket2 = game.add.sprite(195, 550, 'bucket');
-
-            game.physics.enable(bucket2, Phaser.Physics.ARCADE);
-
-            bucket2.scale.setTo(0.7);
-            bucket2.body.immovable = true;
-            bucket2.body.moves = false;
-            bucket2.body.setSize(85, 10, 0, 70);
-            
-            bucket3 = game.add.sprite(365, 575, 'bucket');
-
-            game.physics.enable(bucket3, Phaser.Physics.ARCADE);
-
-            bucket3.scale.setTo(0.5);
-            bucket3.body.immovable = true;
-            bucket3.body.moves = false;
-            bucket3.body.setSize(60, 10, 0, 50);
-
-            bucket4 = game.add.sprite(505, 550, 'bucket');
-
-            game.physics.enable(bucket4, Phaser.Physics.ARCADE);
-
-            bucket4.scale.setTo(0.7);
-            bucket4.body.immovable = true;
-            bucket4.body.moves = false;
-            bucket4.body.setSize(85, 10, 0, 70);
-
-            bucket5 = game.add.sprite(650, 515, 'bucket');
-
-            game.physics.enable(bucket5, Phaser.Physics.ARCADE);
-
-            bucket5.body.immovable = true;
-            bucket5.body.moves = false;
-            bucket5.body.setSize(120, 10, 0, 100);*/
 
             game.physics.enable(ball, Phaser.Physics.ARCADE);
 
@@ -252,9 +210,10 @@
             ball.events.onOutOfBounds.add(gameReset, this);
 
             //Set Score Text onto playing screen
-            scoreText = game.add.text(32, 550, 'score: ' + score, { font: "20px Arial", fill: "#000", align: "left" });
-            introText = game.add.text(game.world.centerX, 400, '- click to start -', { font: "40px Arial", fill: "#000", align: "center" });
-            introText.anchor.setTo(0.5, 0.5);
+            scoreText = game.add.text(32, 550, 'score: ' + score, { font: "20px Arial", fill: "white", align: "left" });
+            introClick = game.add.sprite(game.world.centerX, 400,'button');
+            introClick.scale.setTo(0.5);
+            introClick.anchor.setTo(0.5, 0.5);
 
             game.input.onDown.add(releaseBall, this);
         }
@@ -281,10 +240,6 @@
                 game.physics.arcade.collide(ball, pegsRed, ballHitPegGreen, null, this);
 
                 game.physics.arcade.collide(ball, bucketBackgrounds, ballHitBucket, null, this);
-                /*game.physics.arcade.collide(ball, bucket2, ballHitMediumBucket, null, this);
-                game.physics.arcade.collide(ball, bucket3, ballHitSmallBucket, null, this);
-                game.physics.arcade.collide(ball, bucket4, ballHitMediumBucket, null, this);
-                game.physics.arcade.collide(ball, bucket5, ballHitBigBucket, null, this);*/
             }
         }
 
@@ -293,7 +248,7 @@
             {
                 ballInCannon = false;
                 game.physics.arcade.gravity.y = 200;
-                introText.visible = false;
+                introClick.visible = false;
             }
         }
 
