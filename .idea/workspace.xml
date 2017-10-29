@@ -359,7 +359,7 @@
       <workItem from="1508378613530" duration="1093000" />
       <workItem from="1508625696358" duration="1577000" />
       <workItem from="1509058001802" duration="28000" />
-      <workItem from="1509058374640" duration="3821000" />
+      <workItem from="1509058374640" duration="3968000" />
     </task>
     <task id="LOCAL-00001" summary="created create account page and functionality -Sigala">
       <created>1506811248693</created>
@@ -508,11 +508,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509249881249</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added click button on drop">
+      <created>1509249887569</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1509249887569</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16194000" />
+    <option name="totallyTimeSpent" value="16341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
